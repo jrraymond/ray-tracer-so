@@ -29,7 +29,8 @@ render :: [([(Float,Float)],[(Float,Float)])] -> World -> [Color]
 render grids world = cs where 
   ps = [ (i,j) | j <- reverse [0..wImgHt world - 1] , i <- [0..wImgWd world - 1] ]
   --cs = map (colorPixel world) (zip ps grids)
-  cs = withStrategy (parListChunk (round (wImgWd world)) rdeepseq) (map (colorPixel world) (zip ps grids))
+  --cs = withStrategy (parListChunk (round (wImgWd world)) rdeepseq) (map (colorPixel world) (zip ps grids))
+  cs = withStrategy (parBuffer 16 rdeepseq) (map (colorPixel world) (zip ps grids))
   --cs = concat $ withStrategy (parBuffer 40 rdeepseq) (chunksOf 100 (map (colorPixel world) (zip ps grids)))
 
 colorPixel :: World -> ((Float,Float),([(Float,Float)],[(Float,Float)])) -> Color

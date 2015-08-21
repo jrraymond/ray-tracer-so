@@ -1,0 +1,37 @@
+
+src/RayTracer.hs:8:1: Warning:
+    The import of ‘Control.Parallel.Strategies’ is redundant
+      except perhaps to import instances from ‘Control.Parallel.Strategies’
+    To import instances alone, use: import Control.Parallel.Strategies()
+ 280,534,481,664 bytes allocated in the heap
+   1,756,125,760 bytes copied during GC
+       4,074,000 bytes maximum residency (130 sample(s))
+         220,456 bytes maximum slop
+              13 MB total memory in use (0 MB lost due to fragmentation)
+
+                                     Tot time (elapsed)  Avg pause  Max pause
+  Gen  0     537884 colls, 537884 par    6.475s   6.092s     0.0000s    0.0308s
+  Gen  1       130 colls,   129 par    0.673s   0.356s     0.0027s    0.0048s
+
+  Parallel GC work balance: 36.35% (serial 0%, perfect 100%)
+
+  TASKS: 6 (1 bound, 5 peak workers (5 total), using -N2)
+
+  SPARKS: 0 (0 converted, 0 overflowed, 0 dud, 0 GC'd, 0 fizzled)
+
+  INIT    time    0.000s  (  0.001s elapsed)
+  MUT     time  105.316s  (114.559s elapsed)
+  GC      time    7.148s  (  6.448s elapsed)
+  RP      time    0.000s  (  0.000s elapsed)
+  PROF    time    0.000s  (  0.000s elapsed)
+  EXIT    time    0.001s  (  0.001s elapsed)
+  Total   time  112.465s  (121.009s elapsed)
+
+  Alloc rate    2,663,749,508 bytes per MUT second
+
+  Productivity  93.6% of total user, 87.0% of total elapsed
+
+gc_alloc_block_sync: 215335
+whitehole_spin: 0
+gen[0].sync: 0
+gen[1].sync: 171
